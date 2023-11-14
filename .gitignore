@@ -1,2 +1,3 @@
 *.pdf
 main.c
+.DS_store
