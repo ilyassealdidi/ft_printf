@@ -19,8 +19,7 @@
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr_base(long nbr, int base, unsigned char is_upper);
-int	ft_printf(const char *s, ...);
 int	ft_print_address(unsigned long nbr);
-int	ft_putuint(unsigned int nbr);
-int	ft_putnbr(int n);
+int	ft_printf(const char *s, ...);
+
 #endif
