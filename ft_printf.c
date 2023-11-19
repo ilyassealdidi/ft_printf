@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 08:48:43 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/19 11:08:35 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/19 22:20:20 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_printf(const char *s, ...)
 	_printed = 0;
 	while (*s)
 	{
-		if (*s == '%')
+		if (*s == '%' && *(s + 1))
 			_printed += check_format(*++s, args);
 		else
 			_printed += write(1, s, 1);
