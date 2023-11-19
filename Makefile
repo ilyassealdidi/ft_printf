@@ -6,16 +6,22 @@
 #    By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 08:50:47 by ialdidi           #+#    #+#              #
-#    Updated: 2023/11/19 07:43:40 by ialdidi          ###   ########.fr        #
+#    Updated: 2023/11/19 11:07:39 by ialdidi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS	= ft_putchar.c ft_putstr.c ft_printf.c ft_putnbr_base.c ft_print_address.c
+SRCS	= ft_printf.c \
+			sources/ft_putchar.c \
+			sources/ft_putstr.c \
+			sources/ft_putnbr_base.c \
+			sources/ft_print_address.c
 
 OBJS	= $(SRCS:.c=.o)
 
 AR 		= ar rc
+
+LIBRARY	= includes/libftprintf.h
 
 CFLAGS	= -Wall -Wextra -Werror
 
@@ -26,7 +32,7 @@ all		:	$(NAME)
 $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-%.o		: %.c
+%.o		: %.c $(LIBRARY)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean	:

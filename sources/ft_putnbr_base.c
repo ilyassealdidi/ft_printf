@@ -6,11 +6,11 @@
 /*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:30:09 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/18 11:11:52 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/19 11:03:04 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "../includes/libftprintf.h"
 
 static int	ft_tolower(int c)
 {

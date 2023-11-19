@@ -6,11 +6,11 @@
 /*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 08:35:45 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/18 11:11:52 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/19 11:03:01 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "../includes/libftprintf.h"
 
 int	ft_putchar(char c)
 {
