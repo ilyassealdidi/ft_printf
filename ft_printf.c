@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 08:48:43 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/20 09:29:36 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/20 09:31:17 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,7 @@ int	ft_printf(const char *s, ...)
 	while (*s)
 	{
 		if (*s == '%')
-		{
-			if (*++s)
-				_printed += check_format(*s, args);
-			else
-				break ;
-		}
+			_printed += check_format(*++s, args);
 		else
 			_printed += write(1, s, 1);
 		s++;
