@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 08:48:43 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/19 11:08:35 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/20 09:29:36 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 static int	check_format(char format, va_list args)
 {
-	if (format == 'd')
-		return (ft_putnbr_base(va_arg(args, int), 10, 0));
-	else if (format == 'i')
+	if (format == 'd' || format == 'i')
 		return (ft_putnbr_base(va_arg(args, int), 10, 0));
 	else if (format == 'u')
 		return (ft_putnbr_base(va_arg(args, unsigned int), 10, 0));
@@ -35,6 +33,8 @@ static int	check_format(char format, va_list args)
 		ft_putstr("0x");
 		return (ft_print_address((unsigned long)va_arg(args, void *)) + 2);
 	}
+	else
+		ft_putchar(format);
 	return (0);
 }
 
@@ -50,7 +50,12 @@ int	ft_printf(const char *s, ...)
 	while (*s)
 	{
 		if (*s == '%')
-			_printed += check_format(*++s, args);
+		{
+			if (*++s)
+				_printed += check_format(*s, args);
+			else
+				break ;
+		}
 		else
 			_printed += write(1, s, 1);
 		s++;
