@@ -35,7 +35,6 @@ static int	check_format(char format, va_list args)
 	}
 	else
 		return ft_putchar(format);
-	return (0);
 }
 
 int	ft_printf(const char *s, ...)
