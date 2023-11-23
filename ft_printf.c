@@ -34,7 +34,7 @@ static int	check_format(char format, va_list args)
 		return (ft_print_address((unsigned long)va_arg(args, void *)) + 2);
 	}
 	else
-		ft_putchar(format);
+		return ft_putchar(format);
 	return (0);
 }
 
